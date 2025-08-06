@@ -259,4 +259,70 @@
 
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
+  
+   <gazebo reference="base_link">
+    <sensor name='collision_sensor' type='contact'>
+      <contact>
+        <collision>base_link_fixed_joint_lump__chassis_link_collision</collision>
+      </contact>
+      <plugin name="collision_sensor" filename="libgazebo_collision_sensor.so">
+        <rosDebugLevel>na</rosDebugLevel>
+        <topicName>/jackal/collision_1</topicName>
+        <updateRate>10.0</updateRate>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+   <gazebo reference="front_left_wheel_link">
+    <sensor name='collision_sensor' type='contact'>
+      <contact>
+        <collision>front_left_wheel_link_collision</collision>
+      </contact>
+      <plugin name="collision_sensor" filename="libgazebo_collision_sensor.so">
+        <rosDebugLevel>na</rosDebugLevel>
+        <topicName>/jackal/collision_2</topicName>
+        <updateRate>10.0</updateRate>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+   <gazebo reference="front_right_wheel_link">
+    <sensor name='collision_sensor' type='contact'>
+      <contact>
+        <collision>front_right_wheel_link_collision</collision>
+      </contact>
+      <plugin name="collision_sensor" filename="libgazebo_collision_sensor.so">
+        <rosDebugLevel>na</rosDebugLevel>
+        <topicName>/jackal/collision_3</topicName>
+        <updateRate>10.0</updateRate>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+   <gazebo reference="rear_left_wheel_link">
+    <sensor name='collision_sensor' type='contact'>
+      <contact>
+        <collision>rear_left_wheel_link_collision</collision>
+      </contact>
+      <plugin name="collision_sensor" filename="libgazebo_collision_sensor.so">
+        <rosDebugLevel>na</rosDebugLevel>
+        <topicName>/jackal/collision_4</topicName>
+        <updateRate>10.0</updateRate>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+   <gazebo reference="rear_right_wheel_link">
+    <sensor name='collision_sensor' type='contact'>
+      <contact>
+        <collision>rear_right_wheel_link_collision</collision>
+      </contact>
+      <plugin name="collision_sensor" filename="libgazebo_collision_sensor.so">
+        <rosDebugLevel>na</rosDebugLevel>
+        <topicName>/jackal/collision_5</topicName>
+        <updateRate>10.0</updateRate>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
 </robot>
