@@ -17,8 +17,6 @@
 
     <!-- Optionally enable teleop for the simulation -->
     <arg name="joystick" default="false" />
-
-    <node name="jackal_tf" pkg="priest" type="tf_transform_map.py" /> 
     
     <!-- Launch Gazebo with the specified world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
